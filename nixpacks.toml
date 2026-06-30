@@ -16,10 +16,9 @@ cmds = [
 ]
 
 [start]
-cmd = "node web/.next/standalone/web/server.js"
+cmd = "HOSTNAME=0.0.0.0 node web/.next/standalone/web/server.js"
 
 [variables]
 NODE_ENV = "production"
-HOSTNAME = "0.0.0.0"
 PORT = "3000"
 PROJECT_ROOT = "/app"

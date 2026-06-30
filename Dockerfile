@@ -50,4 +50,4 @@ RUN mkdir -p /app/results /app/results/logs /app/.tokens
 
 EXPOSE 3000
 
-CMD ["node", "web/server.js"]
+CMD ["sh", "-c", "HOSTNAME=0.0.0.0 node web/server.js"]
