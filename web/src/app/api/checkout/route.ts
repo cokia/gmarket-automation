@@ -4,7 +4,8 @@ import * as fs from "fs";
 import * as path from "path";
 import * as os from "os";
 
-const LOG_DIR = path.resolve(process.cwd(), "..", "results", "logs");
+const PROJECT_ROOT = process.env.PROJECT_ROOT || path.resolve(process.cwd(), "..");
+const LOG_DIR = path.join(PROJECT_ROOT, "results", "logs");
 
 interface AccountRow {
   gmarket_id: string;
@@ -30,7 +31,7 @@ function createLogId(): string {
 function runBatchProcess(rows: AccountRow[], tmpCsv: string, logId: string) {
   const logFile = path.join(LOG_DIR, `${logId}.log`);
   const metaFile = path.join(LOG_DIR, `${logId}.meta.json`);
-  const projectRoot = path.resolve(process.cwd(), "..");
+  const projectRoot = PROJECT_ROOT;
 
   const args = ["tsx", "batch-pay.ts", `--csv=${tmpCsv}`];
 

@@ -3,6 +3,8 @@ services:
     build: .
     ports:
       - "3000:3000"
+    environment:
+      - PROJECT_ROOT=/app
     volumes:
       - results:/app/results
       - tokens:/app/.tokens

@@ -33,6 +33,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV HOSTNAME=0.0.0.0
 ENV PORT=3000
+ENV PROJECT_ROOT=/app
 
 RUN apk add --no-cache libc6-compat
 
