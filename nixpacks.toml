@@ -1,0 +1,25 @@
+[phases.setup]
+nixPkgs = ["nodejs_20", "yarn"]
+
+[phases.install]
+cmds = [
+    "yarn install --frozen-lockfile",
+    "cd web && npm ci"
+]
+
+[phases.build]
+cmds = [
+    "cd web && npm run build",
+    "cp -r web/.next/static web/.next/standalone/web/.next/static",
+    "cp -r web/public web/.next/standalone/web/public",
+    "mkdir -p results results/logs .tokens"
+]
+
+[start]
+cmd = "node web/.next/standalone/web/server.js"
+
+[variables]
+NODE_ENV = "production"
+HOSTNAME = "0.0.0.0"
+PORT = "3000"
+PROJECT_ROOT = "/app"
