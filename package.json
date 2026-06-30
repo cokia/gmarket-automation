@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "HOSTNAME=0.0.0.0 node web/.next/standalone/web/server.js",
+    "start": "HOSTNAME=0.0.0.0 PROJECT_ROOT=/app node web/.next/standalone/web/server.js",
     "dev": "cd web && npm run dev",
     "build": "cd web && npm install && npm run build",
     "batch": "tsx batch-pay.ts",

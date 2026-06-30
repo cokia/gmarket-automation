@@ -4,7 +4,7 @@ import * as fs from "fs";
 import * as path from "path";
 import * as os from "os";
 
-const PROJECT_ROOT = process.env.PROJECT_ROOT || path.resolve(process.cwd(), "..");
+const PROJECT_ROOT = process.env.PROJECT_ROOT || "/app";
 const LOG_DIR = path.join(PROJECT_ROOT, "results", "logs");
 
 interface AccountRow {

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import * as fs from "fs";
 import * as path from "path";
 
-const PROJECT_ROOT = process.env.PROJECT_ROOT || path.resolve(process.cwd(), "..");
+const PROJECT_ROOT = process.env.PROJECT_ROOT || "/app";
 const LOG_DIR = path.join(PROJECT_ROOT, "results", "logs");
 
 export async function GET(request: NextRequest) {
