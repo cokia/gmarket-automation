@@ -33,7 +33,6 @@ function runBatchProcess(rows: AccountRow[], tmpCsv: string, logId: string) {
   const projectRoot = path.resolve(process.cwd(), "..");
 
   const args = ["tsx", "batch-pay.ts", `--csv=${tmpCsv}`];
-  args.push("--delay=1000");
 
   const child = spawn("npx", args, {
     cwd: projectRoot,

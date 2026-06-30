@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "tsx batch-pay.ts",
+    "start": "node web/server.js",
+    "batch": "tsx batch-pay.ts",
     "dry-run": "tsx batch-pay.ts --dry-run"
   },
   "dependencies": {
