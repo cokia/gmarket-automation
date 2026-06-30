@@ -70,9 +70,9 @@ function runBatchProcess(rows: AccountRow[], tmpCsv: string, logId: string) {
           if (resultFiles.length > 0) {
             const data = JSON.parse(fs.readFileSync(path.join(resultDir, resultFiles[0]), "utf8"));
             if (data.ecoupons) {
-              r.pins = data.ecoupons.flatMap((ec: { pins: { compCouponNo: string }[] }) =>
-                ec.pins.map((p) => p.compCouponNo)
-              );
+            r.pins = data.ecoupons.flatMap((ec: { pins: { compCouponNo: string; compAuthNo?: string }[] }) =>
+                ec.pins.map((p) => p.compAuthNo ? `${p.compCouponNo}/${p.compAuthNo}` : p.compCouponNo)
+            );
             }
             if (data.orderKey) r.orderKey = data.orderKey;
           }

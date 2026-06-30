@@ -103,7 +103,7 @@ async function runCheckout(client: GmarketCheckoutClient, id: string, itemCode: 
   console.log(`  ${tag} 주문 완료 중...`);
   const result = await client.completePayment(card.cardNumber);
 
-  const pins = result.ecoupons.flatMap((ec) => ec.pins.map((p) => p.compCouponNo));
+  const pins = result.ecoupons.flatMap((ec) => ec.pins.map((p) => p.compAuthNo ? `${p.compCouponNo}/${p.compAuthNo}` : p.compCouponNo));
   console.log(`  ${tag} ✓ 성공! orderKey=${result.orderKey}, PIN=${pins.join(", ")}`);
 
   const file = saveResult(id, index, result);
