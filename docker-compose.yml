@@ -1,0 +1,13 @@
+services:
+  gmarket:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - results:/app/results
+      - tokens:/app/.tokens
+    restart: unless-stopped
+
+volumes:
+  results:
+  tokens:

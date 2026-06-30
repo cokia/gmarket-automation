@@ -1,0 +1,9 @@
+node_modules
+.next
+.tokens
+results
+*.log
+.DS_Store
+.git
+web/node_modules
+web/.next
