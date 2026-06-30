@@ -1,0 +1,10 @@
+node_modules/
+.tokens/
+results/
+.DS_Store
+*.log
+.next/
+
+accounts.csv
+sample/.gmarket-token.json
+error-dump.txt
