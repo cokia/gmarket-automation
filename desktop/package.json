@@ -1,0 +1,46 @@
+{
+  "name": "gmarket-automation",
+  "version": "1.0.0",
+  "description": "지마켓 결제 자동화 시스템",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "prebuild": "node scripts/prepare.js",
+    "build:win": "npm run prebuild && electron-builder --win",
+    "build:mac": "npm run prebuild && electron-builder --mac",
+    "build": "npm run prebuild && electron-builder --win --mac"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.0"
+  },
+  "build": {
+    "appId": "com.starpay.gmarket",
+    "productName": "Gmarket Automation",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/",
+        "to": ".",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "target": ["nsis"],
+      "icon": null
+    },
+    "mac": {
+      "target": ["dmg"],
+      "icon": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
