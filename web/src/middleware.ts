@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const ALLOWED_IPS = [
   "1.209.169.130",
+  "118.217.143.178",
   "127.0.0.1",
   "::1",
 ];
